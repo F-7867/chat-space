@@ -1,0 +1,35 @@
+.contents{
+    &__chat-side{
+        &--side-header{
+            background-color: #253141;
+            height: 100px;
+            padding: 0 20px;
+            align-items: center;
+            display:flex;
+            &__box{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                font-weight: bold;
+                &__user-name{
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: $color-white;
+                }
+        
+                &__menu{
+                    display:flex;
+                    margin-left: 0.3rem;
+                    color: $color-white;
+                    &__new-group{
+                        margin-left: 0.3rem;
+                    }
+        
+                    &__edit-user{
+                        margin-left: 0.3rem;
+                    }
+                }
+            }
+        }
+    }    
+}

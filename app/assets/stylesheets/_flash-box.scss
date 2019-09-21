@@ -1,0 +1,9 @@
+.flash-box{
+    color: $color-white;
+    font-size: 1rem;
+    text-align: center;
+    width: 100vw;
+    &__notice{
+        background-color: #38aef0;
+    }
+}
