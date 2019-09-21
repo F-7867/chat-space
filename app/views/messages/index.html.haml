@@ -1,0 +1,65 @@
+.flash-box
+    .flash-box__notice
+        グループを作成しました
+
+.contents    
+    .contents__chat-side  
+        .contents__chat-side--side-header
+            .contents__chat-side--side-header__box
+                .contents__chat-side--side-header__box__user-name
+                    seo
+                .contents__chat-side--side-header__box__menu
+                    =link_to "", class: "contents__chat-side--side-header__box__menu__new-group" do
+                        = fa_icon 'edit'
+                    =link_to "", class: "contents__chat-side--side-header__box__menu__edit-user" do
+                        = fa_icon 'cog'
+        .contents__chat-side--groups
+            .contents__chat-side--groups__group
+                .contents__chat-side--groups__group__group-name
+                    sample-group
+                .contents__chat-side--groups__group__latest-message
+                    Good bye world!
+            .contents__chat-side--groups__group   
+                .contents__chat-side--groups__group__group-name
+                    test-group
+                .contents__chat-side--groups__group__latest-message
+                    Good night
+    .contents__chat-main
+        .contents__chat-main--main-header
+            .contents__chat-main--main-header__left-box
+                .contents__chat-main--main-header__left-box__current-group
+                    sample
+                .contents__chat-main--main-header__left-box__member-list
+                    Member : 
+                    .contents__chat-main--main-header__left-box__member-list__member
+                        seo 
+                    .contents__chat-main--main-header__left-box__member-list__member    
+                        neko
+            .contents__chat-main--main-header__edit-btn
+                Edit
+        .contents__chat-main--messages
+            .contents__chat-main--messages__message
+                .contents__chat-main--messages__message__upper-info
+                    .contents__chat-main--messages__message__upper-info__talker
+                        seo 
+                    .contents__chat-main--messages__message__upper-info__date    
+                        2016/09/21(Wed) 06:16:55
+                .contents__chat-main--messages__message__text   
+                    Hello world!
+
+            .contents__chat-main--messages__message
+                .contents__chat-main--messages__message__upper-info
+                    .contents__chat-main--messages__message__upper-info__talker
+                        neko 
+                    .contents__chat-main--messages__message__upper-info__date
+                        2016/09/22(Thu) 06:16:55
+                .contents__chat-main--messages__message__text    
+                    Good bye world!
+        .contents__chat-main--form
+            %form.contents__chat-main--form__new-message#new-message
+                .contents__chat-main--form__new-message__input-box
+                    %input.contents__chat-main--form__new-message__input-box__text#message_content{:type => "text", :placeholder => "type a message"}
+                    %label.contents__chat-main--form__new-message__input-box__image{:for => "message_image"}
+                        = fa_icon 'image'
+                        %input.contents__chat-main--form__new-message__input-box__image__file#message_image{:type => "file"}
+                %input.contents__chat-main--form__new-message__submit-btn{:type => "submit", :value => "Send"}
