@@ -1,7 +1,7 @@
 .contents{
     &__chat-main{    
         &--main-header{
-            background-color: $color-white;
+            background-color: $white;
             height: 100px;
             display: flex;
             justify-content: space-between;
@@ -30,10 +30,10 @@
                 line-height: 40px;
                 padding: 0 20px;
                 margin-top: 28px;
-                border: solid 1px $color-light-blue;
+                border: solid 1px $light-blue;
                 position: absolute;
                 right: 40px;
-                color: $color-light-blue;
+                color: $light-blue;
             }
         }
     }

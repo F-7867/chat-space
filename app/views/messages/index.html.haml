@@ -1,17 +1,17 @@
 .flash-box
     .flash-box__notice
-        グループを作成しました
+      
 
 .contents    
     .contents__chat-side  
         .contents__chat-side--side-header
             .contents__chat-side--side-header__box
-                .contents__chat-side--side-header__box__user-name
-                    seo
+                %h3.contents__chat-side--side-header__box__user-name
+                    = current_user.name
                 .contents__chat-side--side-header__box__menu
                     =link_to "", class: "contents__chat-side--side-header__box__menu__new-group" do
                         = fa_icon 'edit'
-                    =link_to "", class: "contents__chat-side--side-header__box__menu__edit-user" do
+                    =link_to edit_user_path(current_user), class: "contents__chat-side--side-header__box__menu__edit-user" do
                         = fa_icon 'cog'
         .contents__chat-side--groups
             .contents__chat-side--groups__group

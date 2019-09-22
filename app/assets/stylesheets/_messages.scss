@@ -12,10 +12,8 @@ body{
     box-sizing: border-box;
 }
 
-$color-white: #ffffff;
-$color-light-blue: #38aef0;
-
-
+$white: #fff;
+$light_blue: #38aef0;
 
 .contents{
     width: 100vw;
@@ -24,10 +22,10 @@ $color-light-blue: #38aef0;
     &__chat-side{
         height: 100%;
         width: 300px;
-        color: $color-white;
+        color: $white;
         float:left;
         a{
-            color: $color-white;
+            color: $white;
         }
     }
 
