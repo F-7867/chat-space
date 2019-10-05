@@ -11,9 +11,9 @@
                 %ul.contents__chat-side--side-header__box__menu
                     %li.contents__chat-side--side-header__box__menu__new-group
                     = link_to new_group_path do
-                        = fa_icon 'edit'
+                        = fa_icon 'edit' class: 'icon'
                     =link_to edit_user_path(current_user), class: "contents__chat-side--side-header__box__menu__edit-user" do
-                        = fa_icon 'cog'
+                        = fa_icon 'cog' class: 'icon'
         .contents__chat-side--groups
             .contents__chat-side--groups__group
                 .contents__chat-side--groups__group__group-name
@@ -56,11 +56,12 @@
                         2016/09/22(Thu) 06:16:55
                 .contents__chat-main--messages__message__text    
                     Good bye world!
-        .contents__chat-main--form
-            %form.contents__chat-main--form__new-message#new-message
-                .contents__chat-main--form__new-message__input-box
-                    %input.contents__chat-main--form__new-message__input-box__text#message_content{:type => "text", :placeholder => "type a message"}
-                    %label.contents__chat-main--form__new-message__input-box__image{:for => "message_image"}
-                        = fa_icon 'image'
-                        %input.contents__chat-main--form__new-message__input-box__image__file#message_image{:type => "file"}
-                %input.contents__chat-main--form__new-message__submit-btn{:type => "submit", :value => "Send"}
+        .contents__chat-main--message
+            .form
+                = form_for [@group, @message] do |f|
+                    = f.text_field :content, class: 'form__text', placeholder: 'type a message'
+                    .form__box    
+                        = f.label :image, class: 'form__box__image' do
+                            = fa_icon 'image', class: 'icon'
+                            = = f.file_field :image, class: 'hidden'
+                    = f.submit 'Send', class: 'form__submit'
