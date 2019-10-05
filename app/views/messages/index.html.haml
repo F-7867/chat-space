@@ -1,27 +1,9 @@
 .flash-box
     .flash-box__notice
 
-.contents
-    .contents__chat-side
-        .contents__chat-side--side-header 
-            .contents__chat-side--side-header__box
-                %h3.contents__chat-side--side-header__box__user-name
-                    = current_user.name
-                %ul.contents__chat-side--side-header__box__menu
-                    %li.contents__chat-side--side-header__box__menu__new-group
-                        = link_to new_group_path do
-                            = fa_icon 'edit'
-                    %li.contents__chat-side--side-header__box__menu__edit-user
-                        = link_to edit_user_path(current_user) do
-                            = fa_icon 'cog'
-        .contents__chat-side--groups
-            .contents__chat-side--groups__group
-                - current_user.groups.each do |group|
-                    = link_to '#' do
-                        .contents__chat-side--groups__group__group-name
-                            = group.name
-                        .contents__chat-side--groups__group__latest-message
-                            メッセージはまだありません。
+.contents    
+    = render 'shared/side_bar'
+    
     .contents__chat-main
         .contents__chat-main--main-header
             .contents__chat-main--main-header__left-box
@@ -54,10 +36,11 @@
                 .contents__chat-main--messages__message__text    
                     Good bye world!
         .contents__chat-main--form
-            %form.contents__chat-main--form__new-message#new-message
-                .contents__chat-main--form__new-message__input-box
-                    %input.contents__chat-main--form__new-message__input-box__text#message_content{:type => "text", :placeholder => "type a message"}
-                    %label.contents__chat-main--form__new-message__input-box__image{:for => "message_image"}
-                        = fa_icon 'image'
-                        %input.contents__chat-main--form__new-message__input-box__image__file#message_image{:type => "file"}
-                %input.contents__chat-main--form__new-message__submit-btn{:type => "submit", :value => "Send"}
+            .form
+                = form_for [@group, @message] do |f|
+                    = f.text_field :content, class: 'form__text', placeholder: 'type a message'
+                    .form__box    
+                        = f.label :image, class: 'form__box__image' do
+                            = fa_icon 'image', class: 'icon'
+                            = f.file_field :image, class: 'hidden'
+                    = f.submit 'Send', class: 'form__submit'
