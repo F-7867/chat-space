@@ -5,7 +5,13 @@ html{
 
 body{
     height: 100%;
-    width:100%
+    width: 100%;
+    overflow: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+::-webkit-scrollbar {
+    display: none;
 }
 
 *{
@@ -28,6 +34,7 @@ $light_blue: #38aef0;
             background-color: #fafafa;
             height: calc(100vh - 190px);
             padding: 46px 40px;
+            overflow: scroll;
             .message{
                 padding-bottom: 40px;
                 .upper-info{
