@@ -1,15 +1,17 @@
 .contents{
-    &__chat-main{
-        &--form {
-            height: 90px;
-            width: 100%;
-            background-color: #ddd;
-            bottom: 0;
-            padding: 20px 40px;
-            .form{
-                display: flex;
-                width: 100%;
+    .form{
+        height: 90px;
+        width: 100%;
+        background-color: #ddd;
+        bottom: 0;
+        padding: 20px 40px;
+        position: bottom;
+        .input-box {
+            display: flex;
+            justify-content: space-between;
+            .form__box{
                 position: relative;
+                width: 100%;
                 &__text{
                     height: 50px;
                     width: 100%;
@@ -17,30 +19,28 @@
                     color: #434a54;
                     border-style: none;
                 }
-
-                &__box{
-                    &__image{
-                        font-size: 1.3rem;
-                        position: absolute;
-                        top: 10px;
-                        right: 10px;
-                        cursor: pointer;
-                        .hidden{
-                            display: none;
-                        }
+                &__image{
+                    font-size: 1.3rem;
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    cursor: pointer;
+                    .hidden{
+                        display: none;
                     }
                 }
-            
+            }
+        
 
-                &__submit{
-                    height: 50px;
-                    width: 100px;
-                    padding: 0 30px;
-                    margin-left: 15px;
-                    background-color: $light-blue;
-                    color: $white;
-                    cursor: pointer;
-                }
+            .submit-btn {
+                height: 50px;
+                width: 100px;
+                padding: 0 30px;
+                margin-left: 15px;
+                background-color: $light-blue;
+                color: $white;
+                cursor: pointer;
+                float: right;
             }
         }
     }
