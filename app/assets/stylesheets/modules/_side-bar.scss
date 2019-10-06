@@ -8,31 +8,33 @@
       height: 100px;
       line-height: 100px;
       padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
       &__name {
-        display: inline-block;
         font-size: 16px;
         font-weight: bold;
       }
       &__lists {
-        display: inline-block;
-        float: right;
         .list {
           display: inline-block;
         }
         .icon {
           color: $white;
           font-size: 16px;
+          margin-left: 0.3rem;
         }
       }
     }
   
     .groups {
+      overflow: scroll;
       background-color: #2f3e51;
+      width: 300px;
       height: calc(100vh - 100px);
-      padding: 0 20px;
+      padding: 20px 20px 0;
       .group {
         box-sizing: border-box;
-        padding: 20px 0 20px;
+        padding-bottom: 40px;
         a {
             text-decoration: none;
         }
