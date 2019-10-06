@@ -7,14 +7,13 @@
     .chat-display
         .header
             .header__left-box
-                .current-group
-                    sample
-                .member-list
-                    Member : 
-                    .member-list__member
-                        seo 
-                    .member-list__member    
-                        neko
+                %h2.current-group
+                    = @group.name
+                %ul.member-list
+                    Member :
+                    - @group.users.each do |member| 
+                        %li.member-list__member
+                            = member.name
             .header__edit-btn
                 Edit
         .messages
