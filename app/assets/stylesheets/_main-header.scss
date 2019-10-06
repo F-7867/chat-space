@@ -1,6 +1,6 @@
 .contents{
-    &__chat-main{    
-        &--main-header{
+    .chat-display{    
+        .header{
             background-color: $white;
             height: 100px;
             display: flex;
@@ -9,13 +9,13 @@
             padding: 0 40px;
             &__left-box{
                 margin-top: 35px;
-                &__current-group{
+                .current-group{
                     font-size: 20px;
                     color: #333;
                     margin-bottom: 15px;
                 }
 
-                &__member-list{
+                .member-list{
                     display:flex;
                     font-size: 12px;
                     color: #999999;

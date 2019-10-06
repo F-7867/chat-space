@@ -2,6 +2,7 @@
     box-sizing: border-box;
     color: $white;
     width: 300px;
+    float: left;
     .header {
       background-color: #253141;
       height: 100px;
@@ -31,7 +32,7 @@
       padding: 0 20px;
       .group {
         box-sizing: border-box;
-        padding: 20px 0 40px;
+        padding: 20px 0 20px;
         a {
             text-decoration: none;
         }
@@ -43,7 +44,6 @@
           color: $white;
           font-size: 11px;
           margin-top: 5px;
-          margin-bottom: 40px;
         }
       }
     }

@@ -1,0 +1,11 @@
+.message
+    .upper-info
+        .upper-info__talker
+            neko       
+        .upper-info__date    
+            2 
+    .text   
+        - if message.content.present?
+            %p.text__content
+                Hello
+        = image_tag message.image.url, class: 'text__image' if message.image.present?
