@@ -1,9 +1,9 @@
 .message
     .upper-info
         .upper-info__talker
-            = message.user.name  
+            = message.user.name
         .upper-info__date    
-            = message.created_at.strftime("%Y/%m/%d %H:%M")
+            = message.created_at.strftime("%Y/%m/%d(%a) %H:%M")
     .text   
         - if message.content.present?
             %p.text__content
