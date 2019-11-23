@@ -1,8 +1,13 @@
 $(document).on('turbolinks:load', function(){
+  $(function(){
+    last_message_id = $(".message").last().attr("id");
+    console.log(last_message_id);
+  });
+  
   function buildHTML(message){
     var content = message.content ? `<p class="text__content">${ message.content }</p>` : "";
     var img = message.image ? `<img src= ${ message.image }>` : "";
-    var html = `<div class="message">
+    var html = `<div class="message" data-message_id="${message.id}">
                   <div class="upper-info">
                     <div class="upper-info__talker">
                       ${message.user_name}
