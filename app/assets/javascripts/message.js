@@ -56,7 +56,7 @@ $(document).on('turbolinks:load', function() {
       var last_message_id = $('.message').last().attr('data-message_id');
 
       $.ajax({
-        url: location.href,
+        url: "api/messages",
         type: 'get',
         dataType: 'json',
         data: { id: last_message_id } 
@@ -67,7 +67,7 @@ $(document).on('turbolinks:load', function() {
           insertHTML = buildHTML(message);
           $('.messages').append(insertHTML);
         })
-        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'first');
       })
       .fail(function() {
         alert('自動更新に失敗しました');
@@ -75,7 +75,7 @@ $(document).on('turbolinks:load', function() {
     }
   };
 
-  setInterval(reloadMessages, 7000);
+  setInterval(reloadMessages, 5000);
 
-  
+
 });
